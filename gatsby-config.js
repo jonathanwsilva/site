@@ -5,5 +5,19 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  plugins: [
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Lora",
+              variants: ["400", "700"]
+            },
+          ],
+        },
+      },
+    }
+  ]
 }
