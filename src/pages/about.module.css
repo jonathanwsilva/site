@@ -1,0 +1,39 @@
+.about {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 8fr;
+    grid-auto-rows: min-content;
+    gap: 0 20px;
+
+    /* grid-auto-rows: minmax(100px, auto); */
+    grid-template-areas:
+      "img hd"
+      "img p1"
+      "img p2"
+}
+
+.about img {
+    grid-area: img;
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+@media(max-width: 500px) {
+    .about {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "hd"
+            "p1"
+            "img"
+            "p2"
+    }
+    .about img {
+        max-width: 50%;
+        margin: 0 auto;
+    }
+}
+
+
+.about h1 {
+    grid-area: hd;
+}
