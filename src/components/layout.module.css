@@ -16,6 +16,7 @@
 .content-shell {
     margin: 0 auto;
     max-width: var(--max-width);
+    padding: var(--margin);
 }
 
 .header-wrapper {
