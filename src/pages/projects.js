@@ -15,7 +15,6 @@ export default ({ data }) => {
   console.log(projects);
   return (
     <Layout selected="projects">
-      {/* {`Hello world!\n${JSON.stringify(projects, null, 4)}`} */}
       <h1>Here's some stuff that I've been working on</h1>
       <p>There's not much here right now... check back later!</p>
       <div className={theme['cards']}>
