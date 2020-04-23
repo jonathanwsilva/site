@@ -19,12 +19,10 @@ module.exports = {
       resolve: `gatsby-plugin-webfonts`,
       options: {
         fonts: {
-          google: [
-            {
-              family: "Lora",
-              variants: ["400", "700"]
-            },
-          ],
+          google: ["Lora", "Muli"].map((family) => ({
+            family,
+            variants: ["400", "700"]
+          }))
         },
       },
     }
