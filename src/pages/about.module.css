@@ -1,14 +1,19 @@
 .about {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1000px;
     display: grid;
     grid-template-columns: auto auto;
+    grid-template-rows: auto auto 1fr;
     grid-auto-rows: min-content;
     gap: 0 20px;
     grid-template-areas:
       "img hd"
-      "img p1"
-      "img p2";
+      "img txt1"
+      "img txt2";
+}
+
+.txt2 p:first-of-type {
+    margin-top: 0;
 }
 
 .about h1 {
@@ -24,10 +29,15 @@
 @media(max-width: 600px) {
     .about {
         grid-template-columns: auto;
+        grid-template-rows: repeat(4, auto);
         grid-template-areas:
             "hd"
-            "p1"
+            "txt1"
             "img"
-            "p2"
+            "txt2"
+    }
+    .txt2 {
+        /* Conditionally apply, since margin can't collapse with that of txt1 */
+        margin-top: 16px;
     }
 }
