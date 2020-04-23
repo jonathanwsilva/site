@@ -26,10 +26,10 @@ const projects = zip(metasyntactics, smashmouthlyrics).map(([meta, lyric], idx) 
 export default ({data}) => {
     // const projects = data.allMarkdownRemark.edges.map(({node})=>node);
     return (
-        <Layout selected="Projects">
+        <Layout selected="projects">
             {/* {`Hello world!\n${JSON.stringify(projects, null, 4)}`} */}
             <h1>Well, the years start coming and they don't stop coming</h1>
-            {/* TODO: Make a little box for each project. */}
+            {/* A small card - for when I eventually have many projects*/}
             <div className={theme['cards']}>
                 {projects.map(project => (
                     <div key={project.id} className={theme['card']}>

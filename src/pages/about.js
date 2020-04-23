@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import theme from './about.module.css';
 
 export default ({ data }) => (
-  <Layout selected="About">
+  <Layout selected="about">
     <div className={theme['about']}>
       <h1 className={theme['hd']}>About Jon</h1>
       <p>Hello! My name is Jonathan. Most people call me Jon.</p>

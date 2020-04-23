@@ -4,6 +4,8 @@ import theme from './layout.module.css';
 
 import 'normalize.css';
 
+const capitalize = (str) => `${str[0].toUpperCase()}${str.slice(1)}`
+
 const HeaderLink = ({to, selected, children}) => (
     <Link to={to} className={selected ? theme['linkSelected'] : theme['link']}>
         {children}
@@ -16,21 +18,13 @@ const Header = ({selected}) => (
             <h3>Jonathan Silva</h3>
             <ul>
                 {/* For now, just hardcode the navigable pages */}
-                <li>
-                    <HeaderLink to='/about' selected={selected === 'About'}>
-                        {"About"}
-                    </HeaderLink>
-                </li>
-                <li>
-                    <HeaderLink to='/projects' selected={selected === 'Projects'}>
-                        {"Projects"}
-                    </HeaderLink>
-                </li>
-                <li>
-                    <HeaderLink to='/blog' selected={selected === 'Blog'}>
-                        {"Blog"}
-                    </HeaderLink>
-                </li>
+                {['about', 'projects', 'blog'].map((topic) => (
+                    <li key={`nav-${topic}`}>
+                        <HeaderLink to={`/${topic}`} selected={selected === topic}>
+                            {capitalize(topic)}
+                        </HeaderLink>
+                    </li>
+                ))}
             </ul>
         </header>
     </div>
