@@ -12,7 +12,6 @@ export default ({ data }) => {
     ...node.frontmatter,
     thumb: node.frontmatter.thumb.childImageSharp.fixed
   }));
-  console.log(projects);
   return (
     <Layout selected="projects">
       <h1>Here's some stuff that I've been working on</h1>
@@ -22,6 +21,7 @@ export default ({ data }) => {
           <div 
             key={`card-${project.id}`} 
             className={theme['card']}
+            role="button"
           >
             <Img fixed={project.thumb} />
             <div className={theme['cardContent']}>
