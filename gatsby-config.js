@@ -6,13 +6,13 @@
 
 module.exports = {
   plugins: [
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`, 
     `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data/`,
+        path: `${__dirname}/src/data`
       },
     },
     {
