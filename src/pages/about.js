@@ -17,7 +17,7 @@ export default ({ data }) => (
           I'm interested in functional programming, distributed systems, and web development.
         </p>
         <p>
-          I'm also big on gardening <span role="img" aria-label="flower emoji">&#127804</span>;
+          I'm also big on gardening <span role="img" aria-label="flower emoji">&#127804;</span>
         </p>
       </div>
     </div>
