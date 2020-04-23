@@ -28,14 +28,22 @@ export default ({data}) => {
     return (
         <Layout selected="projects">
             {/* {`Hello world!\n${JSON.stringify(projects, null, 4)}`} */}
-            <h1>Well, the years start coming and they don't stop coming</h1>
-            {/* A small card - for when I eventually have many projects*/}
+            <h1>Here's some stuff that I've been working on</h1>
+            <p>There's not much here right now... check back later!</p>
             <div className={theme['cards']}>
                 {projects.map(project => (
-                    <div key={project.id} className={theme['card']}>
-                      <img src="https://consequenceofsound.net/wp-content/uploads/2019/06/Smash-Mouth.jpg?quality=80"></img>
-                      <h2>{project.frontmatter.title}</h2>
-                      {project.excerpt}
+                    <div key={`card-${project.id}`} className={theme['card']}>
+                      <img 
+                        alt="smash mouth guy" 
+                        src="https://consequenceofsound.net/wp-content/uploads/2019/06/Smash-Mouth.jpg?quality=80"
+                      />
+                      <div className={theme['cardContent']}>
+                        <h3>{project.frontmatter.title}</h3>
+                        <p>{project.excerpt}</p>
+                        <div className={theme['tags']}>
+                          {project.tags.map(tag=><span className={theme['tag']}>{tag}</span>)}
+                        </div>
+                      </div>
                     </div>
                 ))}
             </div>

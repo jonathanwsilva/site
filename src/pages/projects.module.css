@@ -2,24 +2,49 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* Flexbox-gap */
-    padding: 5px;
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     width: 350px;
-    height: 300px;
-    border: 2px solid #afafaf;
-    padding: 10px;
-    border-radius: 5px;
-    /* Flexbox-gap */
+    border: 1px solid #afafaf;
+    border-radius: 10px;
+    /* Flex-gap stand-in */
     margin: 10px;
+    overflow: hidden;
 }
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 100%;
+}
+
+.card-content > * {
+    margin: 10px 0;
+    flex-grow: 0;
+}
+
+/* Since all cards will be same height, ensure last thing in card consumes remaining height */
+.card-content > *:last-child {
+    flex-grow: 1;
+}
+
 .card img {
-    /* Compensate for .card padding */
-    width: calc(100% + 20px);
-    margin: -10px -10px 0 -10px;
+    width: 100%;
 }
-.card h2 {
-    margin-top: inherit;
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.tag {
+    font-size: 0.8rem;
+    padding: 2px 15px;
+    margin: 2px 2px 2px 0;
+    background-color: var(--light-gray);
+    border-radius: 1rem;
 }
