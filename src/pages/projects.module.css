@@ -1,0 +1,25 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Flexbox-gap */
+    padding: 5px;
+}
+
+.card {
+    width: 350px;
+    height: 300px;
+    border: 2px solid #afafaf;
+    padding: 10px;
+    border-radius: 5px;
+    /* Flexbox-gap */
+    margin: 10px;
+}
+.card img {
+    /* Compensate for .card padding */
+    width: calc(100% + 20px);
+    margin: -10px -10px 0 -10px;
+}
+.card h2 {
+    margin-top: inherit;
+}
