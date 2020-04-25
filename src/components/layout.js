@@ -18,7 +18,7 @@ const Header = ({selected}) => (
             <h3>Jonathan Silva</h3>
             <ul>
                 {/* For now, just hardcode the navigable pages */}
-                {['about', 'projects', 'blog'].map((topic) => (
+                {['about'].map((topic) => (
                     <li key={`nav-${topic}`}>
                         <HeaderLink to={`/${topic}`} selected={selected === topic}>
                             {capitalize(topic)}
