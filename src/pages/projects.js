@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
 import theme from './projects.module.css';
 import Img from 'gatsby-image';
@@ -18,10 +18,10 @@ export default ({ data }) => {
       <p>There's not much here right now... check back later!</p>
       <div className={theme['cards']}>
         {projects.map(project => (
-          <div 
+          <Link 
+            to={project.fields.slug}
             key={`card-${project.id}`} 
             className={theme['card']}
-            role="button"
           >
             <Img fixed={project.thumb} alt={project.thumbAlt} />
             <div className={theme['cardContent']}>
@@ -38,7 +38,7 @@ export default ({ data }) => {
                 ))}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
@@ -52,6 +52,9 @@ export const query = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             tags

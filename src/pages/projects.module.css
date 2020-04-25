@@ -14,10 +14,14 @@
     margin: 10px;
     overflow: hidden;
     box-shadow: 0 0 10px var(--light-gray);
+    /* Override default link styles */
+    color: inherit;
+    text-decoration: inherit;
+    outline: 0;
 }
 
-.card:hover {
-
+/* Add back new selection emphasis styles */
+.card:hover .card:active .card:focus {
     box-shadow: 0 0 20px var(--light-gray);
     transform: translateY(-2px);
     cursor: pointer;
