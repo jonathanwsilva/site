@@ -6,7 +6,7 @@ import theme from './post.module.css'
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
-    <Layout>
+    <Layout selected={post.fields.postType}>
       <div className={theme['post']}>
         <h1>{post.frontmatter.title}</h1>
         <p>{post.frontmatter.summary}</p>
@@ -25,6 +25,7 @@ export const query = graphql`
       }
       fields {
         slug
+        postType
       }
     }
   }

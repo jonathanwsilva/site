@@ -1,3 +1,4 @@
+const path = require('path');
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -8,6 +9,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       name: 'slug',
       value: slug,
+    })
+    const postType = slug.split(path.sep).filter(str => str)[0]
+    createNodeField({
+      node,
+      name: 'postType',
+      value: postType,
     })
   }
 }
@@ -30,7 +37,7 @@ exports.createPages = async function ({ actions, graphql }) {
     const {slug} = edge.node.fields
     actions.createPage({
       path: slug,
-      component: require.resolve(`./src/templates/project-post.js`),
+      component: require.resolve(`./src/templates/post.js`),
       context: { slug: slug },
     })
   })
