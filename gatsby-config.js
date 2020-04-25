@@ -8,8 +8,22 @@ const path = require('path');
 module.exports = {
   plugins: [
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`, 
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1000,
+              withWebp: true,
+              quality: 50
+            },
+          },
+        ],
+      },
+    },
     ...([
       {name: 'images',   relPath: 'images'},
       {name: 'posts',     relPath: 'posts'},

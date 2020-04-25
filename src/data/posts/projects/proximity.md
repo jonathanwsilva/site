@@ -7,6 +7,8 @@ thumb: "../../images/access_poly3.png"
 thumbAlt: "A map with an isochrone plotted over it."
 ---
 
+![A map with an isochrone plotted over it.](../../images/access_poly3.png)
+
 For those who'd like to skip the chit-chat:
 **[Source code](mongo://foobar.org)**
 **[Demo](mongo://foobar.org)**
