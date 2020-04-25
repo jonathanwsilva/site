@@ -8,6 +8,13 @@
     box-sizing: border-box;
     font-size: 20px;
 }
+
+html {
+    /* Force vertical scrollbars not to shift content */
+    margin-right: calc(100% - 100vw);
+    overflow-x: hidden;
+}
+
 body{
     padding-right: 0px !important;
 }
