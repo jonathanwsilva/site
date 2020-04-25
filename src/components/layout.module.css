@@ -23,13 +23,14 @@ h3 { font-size: 1.4em;}
 
 :root {
     --max-width: 1600px;
+    --content-max-width: 1200px;
     --margin: 20px;
     --light-gray: #c9c9c9; 
 }
 
 .content-shell {
     margin: 0 auto;
-    width: var(--max-width);
+    width: var(--content-max-width);
     padding: var(--margin);
 }
 
