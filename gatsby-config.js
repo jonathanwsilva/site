@@ -3,18 +3,23 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+const path = require('path');
 
 module.exports = {
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`, 
     `gatsby-transformer-remark`,
-    {
+    ...([
+      {name: 'images',   relPath: 'images'},
+      {name: 'posts',     relPath: 'posts'},
+    ].map(({name, relPath}) => ({
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data`
+        name,
+        path: path.join(__dirname, 'src/data', relPath)
       },
-    },
+    }))),
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
