@@ -23,7 +23,7 @@ export default ({ data }) => {
             className={theme['card']}
             role="button"
           >
-            <Img fixed={project.thumb} />
+            <Img fixed={project.thumb} alt={project.thumbAlt} />
             <div className={theme['cardContent']}>
               <h3>{project.frontmatter.title}</h3>
               <p>{project.frontmatter.summary}</p>
@@ -56,6 +56,7 @@ export const query = graphql`
             title
             tags
             summary
+            thumbAlt
             thumb {
               childImageSharp {
                 fixed(width: 350, quality: 100) {
