@@ -1,0 +1,8 @@
+/* 
+TODO: Consider finding a unified max-width for projects, blog, etc.
+      and then just add that to the layout css module
+*/
+.post {
+    max-width: 1200px;
+    margin: 0 auto;
+}
