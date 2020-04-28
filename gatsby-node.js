@@ -41,4 +41,11 @@ exports.createPages = async function ({ actions, graphql }) {
       context: { slug: slug },
     })
   })
+  // Temporarily redirect / to /about
+  actions.createRedirect({
+    fromPath: "", 
+    toPath: "/about", 
+    isPermanent: true, 
+    force: true
+  });
 }

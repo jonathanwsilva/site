@@ -7,6 +7,7 @@ const path = require('path');
 
 module.exports = {
   plugins: [
+    `gatsby-plugin-netlify`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
