@@ -43,7 +43,7 @@ exports.createPages = async function ({ actions, graphql }) {
   })
   // Temporarily redirect / to /about
   actions.createRedirect({
-    fromPath: "", 
+    fromPath: "/", 
     toPath: "/about", 
     isPermanent: true, 
     force: true
