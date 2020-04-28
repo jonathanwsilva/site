@@ -1,0 +1,31 @@
+.wumboWrapper {
+    margin: 0 auto;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.wumboWrapper h1 {
+    font-size: 7rem;
+    margin: 0;
+    margin-bottom: 0.3rem;
+}
+
+.wumboWrapper:before {
+    content: "";
+    flex-grow: 1;
+}
+
+.wumboWrapper:after {
+    content: "";
+    flex-grow: 3;
+} 
+
+.wumboWrapper p {
+    font-size: 1.5rem;
+    margin: 0;
+}
