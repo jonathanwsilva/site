@@ -31,13 +31,15 @@ h3 { font-size: 1.4em;}
 :root {
     --max-width: 1600px;
     --content-max-width: 1200px;
+    --header-extra-padding: 5px;
     --margin: 20px;
     --light-gray: #c9c9c9; 
 }
 
 .content-shell {
     margin: 0 auto;
-    width: var(--content-max-width);
+    width: 100%;
+    max-width: var(--content-max-width);
     padding: var(--margin);
 }
 
@@ -49,11 +51,13 @@ h3 { font-size: 1.4em;}
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: var(--max-width);
+    width: 100%;
+    max-width: var(--max-width);
+    padding: var(--margin);
 }
 .header-wrapper h3 {
-    margin: var(--margin);
     font-size: 1.3em;
+    margin: auto var(--header-extra-padding);
  
 }
 .header-wrapper ul {
@@ -62,15 +66,16 @@ h3 { font-size: 1.4em;}
     margin: 0 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .header-wrapper ul li {
-    margin: var(--margin) 5px;
+    margin: 0 calc(var(--header-extra-padding) / 2);
     list-style: none;
 }
 
 
 .link, .link-selected {
-    padding: 5px 10px;
+    padding: calc(var(--header-extra-padding) / 2) 10px;
     text-decoration: none;
     color: inherit;
 }
